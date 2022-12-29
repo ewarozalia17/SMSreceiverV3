@@ -51,6 +51,8 @@ Route.post('/',(req,res)=>{
     console.log("\n\n",timestamp, "new SMS received: %j", req.body);
     let body = req.body;
     console.time(timestamp + "\tSoap API took");
+    console.log("pass",pass);
+    console.log("url",url);
     
     //Create promise
     let getPromise=new Promise(function(getResolve,getReject){
