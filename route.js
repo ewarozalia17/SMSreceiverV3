@@ -1,7 +1,7 @@
 const express = require('express');
-const pass = process.env.PASS || "SADMIN";
+const pass = process.env.PASS || "test";
 const soap = require('soap');
-const url = process.env.WSDL || './TBC_CaseManager_WS_UAT.WSDL';
+const url = process.env.WSDL || './teeest';
 
 /**
  * @openapi
