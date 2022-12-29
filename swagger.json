@@ -1,0 +1,62 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "SMS receiver",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/": {
+            "post": {
+                "summary": "Response send by client",
+                "tags": [
+                    "SMS"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SMSobject"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "one or more validation errors occured"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "SMS": {
+                "type": "object",
+                "properties": {
+                    "gatewayNumber": {
+                        "type": "string"
+                    },
+                    "senderNumber": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "gatewayNumber",
+                    "senderNumber",
+                    "message"
+                ]
+            }
+        }
+    },
+    "tags": []
+}
