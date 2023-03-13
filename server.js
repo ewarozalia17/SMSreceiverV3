@@ -14,6 +14,10 @@ server = http.createServer(app)
 
 app.use(express.json());
 
+app.get('/test', (req, res) => {
+  res.send('Hello World!')
+})
+
 //openApi configuration
 const options = {
     customCss: '.swagger-ui .topbar { display: none }',
@@ -53,10 +57,6 @@ app.use((err, req, res, next) => {
 
 //endpoint
 app.use(Route)
-
-app.get('/test', (req, res) => {
-  res.send('Hello World!')
-})
 
 app.listen(port, ()=>{
   console.log(`${appname} started on port ${port}`)
