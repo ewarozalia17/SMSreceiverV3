@@ -54,4 +54,6 @@ app.use((err, req, res, next) => {
 //endpoint
 app.use(Route)
 
-app.listen(port)
+app.listen(port, ()=>{
+  console.log(`${appname} started on port ${port}`)
+})
