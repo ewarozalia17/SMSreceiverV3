@@ -47,6 +47,7 @@ app.use(
 // error handler
 app.use((err, req, res, next) => {
   console.log('\n',dateNow(),`validation error - req.body:${JSON.stringify(req.body)}`);
+  console.log('\n',dateNow(),`req error - err.message ${err.message}; err.status ${err.status}; req.body:${JSON.stringify(req.body)}`);
   // format error
   res.status(err.status || 500).json({
     message: err.message,
